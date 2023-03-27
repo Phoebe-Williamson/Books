@@ -44,7 +44,10 @@ public class Library
     
     // can remove a sinlge value
     public void removeValues() {
-        
+        for (String key : books.keySet()) {
+            System.out.println(books.get(key));
+        }
+        UI.println("Enter the title of the movie you would like to remove: ");
     }
     
     // prints all movies
