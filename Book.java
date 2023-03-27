@@ -11,21 +11,29 @@ public class Book
     private String title;
     private String author;
     private int pages;
+    private int publish;
+    private String genre;
+    private String image;
     
 
     /**
      * Constructor for objects of class book
      */
-    public Book(String auth, String name, int pg)
+    public Book(String auth, String name, int pg, int year, String type, String img)
     {
         // initialise instance variables
-        author = auth;
-        title = name;
-        pages = pg;
+        this.author = auth;
+        this.title = name;
+        this.pages = pg;
+        this.publish = year;
+        this.genre = type;
+        this.image = img;
     }
     
     public String toString() {
-        return "Title: "  + title + ", Author: " + author + ", Pages: " + pages;
+        // prints out the movies in hashmap
+        return "Title: "  + title + ", Author: " + author + ", Pages: " + pages
+        + ", Year published: " + publish + ", Genre: " + genre;
     }
 
 }
