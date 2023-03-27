@@ -21,9 +21,11 @@ public class Library
         // creates buttons
         UI.addButton("Quit", UI::quit);
         UI.addButton("Add Movie", this::addValues);
+        UI.addButton("Print all movies", this::printValues);
         
     }
     
+    // can add a single movie
     public void addValues() {
         String title, author, genre;
         title = UI.askString("Enter the book title: ");
@@ -40,7 +42,17 @@ public class Library
         }
     }
     
+    // can remove a sinlge value
     public void removeValues() {
         
     }
+    
+    // prints all movies
+    public void printValues() {
+        for (String key : books.keySet()) {
+            System.out.println(books.get(key));
+        }
+    }
+    
+    // prints a sinlge movies
 }
