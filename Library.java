@@ -16,26 +16,16 @@ public class Library
      */
     public Library()
     {
-        books = new HashMap<String, Book>(); // declare the hasmap
+        books = new HashMap<String, Book>();
         
-        // creates some books
-        Book b1 = new Book("Stephen king", "celephone", 86, 2016, "horror");
-        Book b2 = new Book("Stephen king", "pet semetery", 68, 2003, "horror");
-        Book b3 = new Book("george orweell", "1984",  63, 1894, "comedy");
+        // creates buttons
+        UI.addButton("Quit", UI::quit);
+        UI.addButton("Add Movie", this::addValues);
         
-        // books.put(b1);
-        //books.put(b2);
-        //books.put(b3);
-        
-        //this.currBookId = 3;
     }
     
     public void addValues() {
-        // currBookId++;
-        
-        
-        /**
-        String title, author, genre, image;
+        String title, author, genre;
         title = UI.askString("Enter the book title: ");
         author = UI.askString("Enter the author of the book: ");
         int pages = UI.askInt("Enter the number of pages in the book: ");
@@ -47,6 +37,10 @@ public class Library
         // print out movies after one has been added
         for (String key : books.keySet()) {
             System.out.println(books.get(key));
-        **/
         }
     }
+    
+    public void removeValues() {
+        
+    }
+}

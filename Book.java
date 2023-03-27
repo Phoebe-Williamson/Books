@@ -1,4 +1,3 @@
-
 /**
  * Write a description of class book here.
  *
@@ -13,13 +12,13 @@ public class Book
     private int pages;
     private int publish;
     private String genre;
-    private String image;
-    private static final String DEFAULT_IMAGE = "book.jpg";
+    //private String image;
     
+
     /**
      * Constructor for objects of class book
      */
-    public Book(String auth, String name, int pg, int year, String type, String img)
+    public Book(String auth, String name, int pg, int year, String type)
     {
         // initialise instance variables
         this.author = auth;
@@ -27,21 +26,6 @@ public class Book
         this.pages = pg;
         this.publish = year;
         this.genre = type;
-        if (image == null) {
-            this.image = DEFAULT_IMAGE;
-        } else {
-            this.image = img;
-        }
-        
-    }
-    
-    /**
-     * Constructor for objects of class book
-     */
-    public Book(String auth, String name, int pg, int year, String type)
-    {
-        // initialise instance variables
-        this(name, auth, pg, year, type, DEFAULT_IMAGE);
     }
     
     public String toString() {
