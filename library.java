@@ -1,4 +1,5 @@
-
+import java.util.HashMap;  // import the HashMap class
+import ecs100.*;
 /**
  * Write a description of class library here.
  *
@@ -8,26 +9,28 @@
 public class library
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private HashMap<String, String> library;
 
     /**
      * Constructor for objects of class library
      */
     public library()
     {
-        // initialise instance variables
-        x = 0;
+        library = new HashMap<String, String>();
+        addValues();
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    
+    public void addValues() {
+        for ( int Books = 0; Books <= 5; Books++) {
+            String title, author;
+            title = UI.askString("Enter the book title: ");
+            author = UI.askString("Enter the author of the book: ");
+            library.put(title, author);
+        }
+        
+        for (String key : library.keySet()) {
+            System.out.println("Title: "  + key + ", Author: " + library.get(key));
+        }
     }
+    
 }
