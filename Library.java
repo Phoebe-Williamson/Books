@@ -17,22 +17,26 @@ public class Library
     public Library()
     {
         books = new HashMap<String, Book>();
-        addValues();
+        UI.addButton("Add Movie", this::addValues);
     }
     
     public void addValues() {
-        for ( int books = 0; books <= 1; books++) {
-            String title, author;
-            title = UI.askString("Enter the book title: ");
-            author = UI.askString("Enter the author of the book: ");
-            int pages = UI.askInt("Enter the number of pages in the book: ");
-            Book book1 = new Book(author, title, pages);
-            this.books.put(title, book1);
-        }
+        String title, author, genre;
+        title = UI.askString("Enter the book title: ");
+        author = UI.askString("Enter the author of the book: ");
+        int pages = UI.askInt("Enter the number of pages in the book: ");
+        int publish = UI.askInt("Enter the year the book was published: ");
+        genre = UI.askString("Enter the genre of the film: ");
+        Book book1 = new Book(author, title, pages, publish, genre);
+        this.books.put(title, book1);
         
+        // print out movies after one has been added
         for (String key : books.keySet()) {
             System.out.println(books.get(key));
         }
     }
     
+    public void removeValues() {
+        
+    }
 }
